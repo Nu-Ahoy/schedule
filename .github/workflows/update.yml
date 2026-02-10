@@ -1,0 +1,28 @@
+name: Update Schedule Widget
+on:
+  schedule:
+    - cron: '0 0 * * *' # 매일 자정 자동 실행
+  workflow_dispatch:      # GitHub에서 'Run workflow' 버튼으로 수동 실행 가능
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run script
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          DATABASE_ID: ${{ secrets.DATABASE_ID }}
+        run: python main.py
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add index.html
+          git commit -m "Update schedule" || exit 0
+          git push
