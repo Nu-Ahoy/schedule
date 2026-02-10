@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root { --aqua: #76D7EA; --pink: #F4C2C2; --purple: #D1D1FB; }
+  body { font-family: 'Pretendard', sans-serif; background: transparent; margin: 0; padding: 10px; }
+  .container { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); border-radius: 24px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+  .header { background: linear-gradient(135deg, var(--aqua), var(--pink)); color: white; padding: 18px; text-align: center; font-weight: 800; font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th { padding: 12px 5px; background: rgba(255, 255, 255, 0.3); color: #666; font-size: 0.85rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  td { padding: 8px 4px; text-align: center; border: 0.5px solid rgba(0,0,0,0.03); height: 50px; vertical-align: middle; }
+  .class-box { border-radius: 10px; padding: 6px 4px; font-weight: 600; color: #444; font-size: 0.75rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03); background: white; word-break: keep-all; line-height: 1.2; }
+  .aqua { border-left: 4px solid var(--aqua); }
+  .pink { border-left: 4px solid var(--pink); }
+  .purple { border-left: 4px solid var(--purple); }
+  .time-label { color: #999; font-size: 0.7rem; font-weight: 500; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">🌊 NU AHOY: VOYAGE SCHEDULE ⚓</div>
+    <table>
+      <thead><tr><th></th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th></tr></thead>
+      <tbody><tr><td class='time-label'>1교시</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>2교시</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>3교시</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>4교시</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>5교시</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>6교시</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>7교시</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>8교시</td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+    </table>
+  </div>
+</body>
+</html>
