@@ -26,3 +26,14 @@
   </div>
 </body>
 </html>
+<style>
+  :root { 
+    --aqua: #76D7EA;   /* 이중전공: 데이터과학 */
+    --pink: #F4C2C2;   /* 본전공: 보건환경 */
+    --purple: #D1D1FB; /* 교양: 몽환적인 라벤더 */
+  }
+  /* 기존 스타일 유지 */
+  .aqua { background: white; border-left: 4px solid var(--aqua); }
+  .pink { background: white; border-left: 4px solid var(--pink); }
+  .purple { background: white; border-left: 4px solid var(--purple); }
+</style>
