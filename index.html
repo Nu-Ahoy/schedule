@@ -6,57 +6,149 @@
   :root { 
     --aqua: #76D7EA;   /* 이중전공: 데이터과학 */
     --pink: #F4C2C2;   /* 본전공: 보건환경 */
-    --purple: #D1D1FB; /* 교양 */
+    --purple: #D1D1FB; /* 교양 및 기타 */
   }
+
   body { 
-    font-family: 'Pretendard', -apple-system, sans-serif; 
-    background: transparent; margin: 0; padding: 10px; 
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; 
+    background: transparent; 
+    margin: 0; 
+    padding: 10px; 
+    -webkit-font-smoothing: antialiased;
   }
+
+  /* 전체 컨테이너: 몽환적인 투명감과 둥근 모서리 */
   .container { 
     background: rgba(255, 255, 255, 0.6); 
     backdrop-filter: blur(15px); 
-    border-radius: 24px; overflow: hidden; 
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 24px; 
+    overflow: hidden; 
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
+
+  /* 헤더: 그라데이션과 항해 테마 */
   .header { 
     background: linear-gradient(135deg, var(--aqua), var(--pink)); 
-    color: white; padding: 18px; text-align: center; 
-    font-weight: 800; font-size: 1.1rem;
+    color: white; 
+    padding: 20px; 
+    text-align: center; 
+    font-weight: 800; 
+    font-size: 1.15rem;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
   }
-  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    table-layout: fixed; 
+  }
+
   th { 
-    padding: 12px 5px; background: rgba(255, 255, 255, 0.3);
-    color: #666; font-size: 0.85rem; border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 14px 5px; 
+    background: rgba(255, 255, 255, 0.3);
+    color: #666; 
+    font-size: 0.85rem; 
+    font-weight: 700;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
+
   td { 
-    padding: 8px 4px; text-align: center; border: 0.5px solid rgba(0,0,0,0.03); 
-    height: 65px; vertical-align: middle; /* 시간을 넣기 위해 높이를 키웠어요 */
+    padding: 8px 4px; 
+    text-align: center; 
+    border: 0.5px solid rgba(0,0,0,0.03); 
+    height: 65px; 
+    vertical-align: middle;
   }
+
+  /* 교시 및 시간 라벨 스타일 */
   .time-label { 
-    color: #888; font-size: 0.75rem; font-weight: 600; line-height: 1.2;
+    color: #777; 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    line-height: 1.3;
   }
+
   .time-sub { 
-    display: block; font-size: 0.55rem; color: #bbb; 
-    font-weight: 400; margin-top: 2px;
+    display: block; 
+    font-size: 0.58rem; 
+    color: #aaa; 
+    font-weight: 400; 
+    margin-top: 3px;
   }
+
+  /* 클릭 가능한 수업 링크 스타일 */
+  .class-link { 
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+  }
+
+  /* 수업 박스: Chubby & Glossy 스타일 */
   .class-box { 
-    border-radius: 10px; padding: 6px 4px; font-weight: 600; 
-    color: #444; font-size: 0.75rem; background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03); word-break: keep-all;
+    border-radius: 12px; 
+    padding: 8px 4px; 
+    font-weight: 700; 
+    color: #444; 
+    font-size: 0.78rem; 
+    background: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04); 
+    word-break: keep-all;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
   }
-  .aqua { border-left: 4px solid var(--aqua); }
-  .pink { border-left: 4px solid var(--pink); }
-  .purple { border-left: 4px solid var(--purple); }
+
+  /* 마우스를 올렸을 때 살짝 커지고 선명해지는 효과 */
+  .class-box:hover { 
+    transform: translateY(-2px) scale(1.03); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    filter: brightness(1.02);
+  }
+
+  /* 카테고리별 포인트 컬러 (왼쪽 테두리) */
+  .aqua { border-left: 5px solid var(--aqua); }
+  .pink { border-left: 5px solid var(--pink); }
+  .purple { border-left: 5px solid var(--purple); }
+
 </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">🌊 SCHEDULE ⚓</div>
+    <div class="header">🌊SCHEDULE⚓</div>
     <table>
-      <thead><tr><th></th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th></tr></thead>
-      <tbody><tr><td class='time-label'>1교시<span class='time-sub'>09:00~10:15</span></td><td></td><td><div class="class-box pink">의학용어</div></td><td></td><td></td><td><div class="class-box aqua">자료구조</div></td></tr><tr><td class='time-label'>2교시<span class='time-sub'>10:30~11:45</span></td><td></td><td><div class="class-box pink">의학용어</div></td><td></td><td></td><td><div class="class-box aqua">자료구조</div></td></tr><tr><td class='time-label'>3교시<span class='time-sub'>12:00~13:15</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>4교시<span class='time-sub'>13:30~14:45</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>5교시<span class='time-sub'>15:00~16:15</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>6교시<span class='time-sub'>16:30~17:45</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>7교시<span class='time-sub'>18:00~18:50</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>8교시<span class='time-sub'>19:00~19:50</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>9교시<span class='time-sub'>20:00~20:50</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>10교시<span class='time-sub'>21:00~21:50</span></td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+      <thead>
+        <tr>
+          <th style="width: 18%;">교시</th>
+          <th>월</th>
+          <th>화</th>
+          <th>수</th>
+          <th>목</th>
+          <th>금</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class='time-label'>1교시<span class='time-sub'>09:00~10:15</span></td><td></td><td>
+            <a href="https://www.notion.so/3039ce64626f80d6acb4d912ae0e3a6c" target="_blank" class="class-link">
+                <div class="class-box pink">의학용어</div>
+            </a>
+            </td><td></td><td></td><td>
+            <a href="https://www.notion.so/2f69ce64626f81a1914cde3f1c6a7a78" target="_blank" class="class-link">
+                <div class="class-box aqua">자료구조</div>
+            </a>
+            </td></tr><tr><td class='time-label'>2교시<span class='time-sub'>10:30~11:45</span></td><td></td><td>
+            <a href="https://www.notion.so/3039ce64626f80d6acb4d912ae0e3a6c" target="_blank" class="class-link">
+                <div class="class-box pink">의학용어</div>
+            </a>
+            </td><td></td><td></td><td>
+            <a href="https://www.notion.so/2f69ce64626f81a1914cde3f1c6a7a78" target="_blank" class="class-link">
+                <div class="class-box aqua">자료구조</div>
+            </a>
+            </td></tr><tr><td class='time-label'>3교시<span class='time-sub'>12:00~13:15</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>4교시<span class='time-sub'>13:30~14:45</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>5교시<span class='time-sub'>15:00~16:15</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>6교시<span class='time-sub'>16:30~17:45</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>7교시<span class='time-sub'>18:00~18:50</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>8교시<span class='time-sub'>19:00~19:50</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>9교시<span class='time-sub'>20:00~20:50</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class='time-label'>10교시<span class='time-sub'>21:00~21:50</span></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
     </table>
   </div>
 </body>
