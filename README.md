@@ -1,24 +1,76 @@
-# schedule
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+<meta charset="UTF-8">
 <style>
-  :root { --aqua: #76D7EA; --pink: #F4C2C2; }
-  body { font-family: 'Pretendard', sans-serif; background: transparent; margin: 0; padding: 10px; }
-  .container { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden; border: 1px solid white; }
-  .header { background: linear-gradient(135deg, var(--aqua), var(--pink)); color: white; padding: 15px; text-align: center; font-weight: bold; }
+  :root { 
+    --aqua: #76D7EA;   /* 이중전공 (데이터과학) */
+    --pink: #F4C2C2;   /* 본전공 (보건환경) */
+    --purple: #D1D1FB; /* 교양 */
+  }
+  body { 
+    font-family: 'Pretendard', -apple-system, sans-serif; 
+    background: transparent; 
+    margin: 0; 
+    padding: 10px; 
+  }
+  .container { 
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(15px); 
+    border-radius: 24px; 
+    overflow: hidden; 
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  .header { 
+    background: linear-gradient(135deg, var(--aqua), var(--pink)); 
+    color: white; 
+    padding: 18px; 
+    text-align: center; 
+    font-weight: 800; 
+    font-size: 1.1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
   table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-  th, td { padding: 10px 5px; text-align: center; border: 0.5px solid rgba(0,0,0,0.05); font-size: 12px; }
-  .class-box { border-radius: 8px; padding: 5px; font-weight: 600; color: #444; font-size: 11px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-  .aqua { background: white; border-left: 4px solid var(--aqua); }
-  .pink { background: white; border-left: 4px solid var(--pink); }
+  th { 
+    padding: 12px 5px; 
+    background: rgba(255, 255, 255, 0.3);
+    color: #666; 
+    font-size: 0.85rem; 
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  td { 
+    padding: 8px 4px; 
+    text-align: center; 
+    border: 0.5px solid rgba(0,0,0,0.03); 
+    height: 50px;
+    vertical-align: middle;
+  }
+  .class-box { 
+    border-radius: 10px; 
+    padding: 6px 4px; 
+    font-weight: 600; 
+    color: #444; 
+    font-size: 0.75rem; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    background: white;
+    word-break: keep-all;
+    line-height: 1.2;
+  }
+  /* 전공별 포인트 바 설정 */
+  .aqua { border-left: 4px solid var(--aqua); }
+  .pink { border-left: 4px solid var(--pink); }
+  .purple { border-left: 4px solid var(--purple); }
+  .time-label { color: #999; font-size: 0.7rem; font-weight: 500; }
 </style>
 </head>
 <body>
   <div class="container">
     <div class="header">🌊 NU AHOY: VOYAGE SCHEDULE ⚓</div>
     <table>
-      <thead><tr><th>시간</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th></tr></thead>
+      <thead>
+        <tr><th></th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th></tr>
+      </thead>
       <tbody>
         {{CONTENT}}
       </tbody>
@@ -26,14 +78,3 @@
   </div>
 </body>
 </html>
-<style>
-  :root { 
-    --aqua: #76D7EA;   /* 이중전공: 데이터과학 */
-    --pink: #F4C2C2;   /* 본전공: 보건환경 */
-    --purple: #D1D1FB; /* 교양: 몽환적인 라벤더 */
-  }
-  /* 기존 스타일 유지 */
-  .aqua { background: white; border-left: 4px solid var(--aqua); }
-  .pink { background: white; border-left: 4px solid var(--pink); }
-  .purple { background: white; border-left: 4px solid var(--purple); }
-</style>
